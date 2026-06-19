@@ -115,8 +115,6 @@ export function AppSidebar() {
               <NavLink to="/terms" className="text-[10px] text-muted-foreground hover:text-foreground transition-colors">Terms</NavLink>
               <span className="text-[10px] text-muted-foreground">·</span>
               <NavLink to="/privacy" className="text-[10px] text-muted-foreground hover:text-foreground transition-colors">Privacy</NavLink>
-              <span className="text-[10px] text-muted-foreground">·</span>
-              <NavLink to="/refunds" className="text-[10px] text-muted-foreground hover:text-foreground transition-colors">Refunds</NavLink>
             </>
           )}
         </div>

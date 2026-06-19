@@ -38,7 +38,6 @@ import {
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import Auth from "@/pages/Auth";
-import { StripePriceSyncPanel } from "@/components/StripePriceSyncPanel";
 
 export default function SuperAdmin() {
   const { user, loading: authLoading } = useAuth();
@@ -459,8 +458,7 @@ export default function SuperAdmin() {
           </CardContent>
         </Card>
 
-        {/* Stripe Price Sync */}
-        <StripePriceSyncPanel />
+
 
         {/* Organizations Table */}
         <Card>

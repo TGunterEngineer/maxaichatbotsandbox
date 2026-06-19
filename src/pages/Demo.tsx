@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import React, { useEffect, useRef, useState } from "react";
 import { useAuth } from "@/contexts/AuthContext";
-import { useAccessGate } from "@/hooks/useAccessGate";
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -82,8 +81,6 @@ const FEATURES_HIGHLIGHT = [
 
 export default function Demo() {
   const { user, signOut } = useAuth();
-  const { hasPaidAccess, loading: gateLoading } = useAccessGate();
-  const showUnlockBanner = !!user && !gateLoading && !hasPaidAccess;
 
   const [messages, setMessages] = useState<Msg[]>([
     {
@@ -181,7 +178,7 @@ export default function Demo() {
                 </Button>
               </Link>
             )}
-            <Link to="/pricing">
+            <Link to="/auth">
               <Button
                 size="sm"
                 className="bg-gradient-to-r from-emerald-400 to-cyan-400 text-[#0a0a0f] hover:opacity-90"
@@ -193,28 +190,7 @@ export default function Demo() {
         </div>
       </header>
 
-      {/* Unlock banner — only shows for logged-in users without an active subscription */}
-      {showUnlockBanner && (
-        <div className="border-b border-amber-400/30 bg-amber-400/10">
-          <div className="mx-auto flex max-w-7xl flex-col items-start gap-3 px-6 py-3 text-sm sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex items-center gap-2 text-amber-100">
-              <Sparkles className="h-4 w-4 flex-shrink-0 text-amber-300" />
-              <span>
-                You're in <strong className="text-white">demo mode</strong>. Pick a plan to unlock your dashboard,
-                bot setup, leads inbox, and install code.
-              </span>
-            </div>
-            <Link to="/pricing" className="flex-shrink-0">
-              <Button
-                size="sm"
-                className="bg-gradient-to-r from-emerald-400 to-cyan-400 text-[#0a0a0f] hover:opacity-90"
-              >
-                See plans <ArrowRight className="ml-1 h-3.5 w-3.5" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      )}
+      {/* Unlock banner removed — all features are unlocked in this demo build. */}
 
       {/* Real-bot banner — same engine, tuned per business */}
       <div className="border-b border-emerald-400/20 bg-gradient-to-r from-emerald-500/[0.08] via-cyan-500/[0.06] to-emerald-500/[0.08]">
@@ -415,12 +391,12 @@ export default function Demo() {
             trained on your services, your hours, your pricing.
           </p>
           <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
-            <Link to="/pricing">
+            <Link to="/auth">
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-emerald-400 to-cyan-400 text-[#0a0a0f] hover:opacity-90"
               >
-                See pricing
+                Get started
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
