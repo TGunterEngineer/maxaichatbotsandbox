@@ -1122,9 +1122,6 @@ export default function LegalDoc({ defaultTab = "privacy" }: { defaultTab?: "pri
           <Link to="/terms" className="hover:text-white/70 underline-offset-4 hover:underline">
             Terms of Service
           </Link>
-          <Link to="/refunds" className="hover:text-white/70 underline-offset-4 hover:underline">
-            Refunds & Cancellations
-          </Link>
         </div>
       </footer>
     </div>
