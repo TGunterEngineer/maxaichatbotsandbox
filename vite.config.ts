@@ -14,9 +14,14 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
+    alias: [
+      // DEMO MODE — replace real Supabase client with in-memory mock
+      {
+        find: /^@\/integrations\/supabase\/client$/,
+        replacement: path.resolve(__dirname, "./src/demo/supabase-mock.ts"),
+      },
+      { find: "@", replacement: path.resolve(__dirname, "./src") },
+    ],
     dedupe: ["react", "react-dom", "react/jsx-runtime", "react/jsx-dev-runtime", "@tanstack/react-query", "@tanstack/query-core"],
   },
 }));
