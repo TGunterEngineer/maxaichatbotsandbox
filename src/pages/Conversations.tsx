@@ -243,6 +243,7 @@ export default function Conversations() {
                             size="icon"
                             onClick={() => setConfirmDelete(s)}
                             title="Delete conversation"
+                            aria-label="Delete conversation"
                             className="text-muted-foreground hover:text-destructive"
                           >
                             <Trash2 className="h-4 w-4" />

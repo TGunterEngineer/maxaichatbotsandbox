@@ -1,0 +1,20 @@
+# MaximumAI
+
+> Interactive demo of an AI chatbot platform built for small business lead capture, featuring RAG retrieval debugging, a prompt playground, and conversation intelligence.
+
+## Pages
+
+- [Dashboard](/): Analytics overview — conversation volume, lead funnel, top questions.
+- [Bot Settings](/bot-settings): Configure the chatbot persona, knowledge base, and behavior.
+- [Leads](/leads): CRM view of captured leads with status and source.
+- [Conversations](/conversations): Full transcripts of chatbot sessions with users.
+- [Widget Preview](/preview): Live preview of the embeddable chat widget.
+- [Install](/install): One-line script tag to embed the widget on any site.
+- [AI Playground](/playground): Streaming prompt-testing lab with model and temperature controls.
+- [RAG Debugger](/rag-debugger): Visualizes which knowledge-base chunks get retrieved for a query.
+- [Intelligence](/intelligence): Sentiment analysis, intent classification, and lead scoring.
+
+## Optional
+
+- [Privacy](/privacy): Privacy policy.
+- [Terms](/terms): Terms of service.

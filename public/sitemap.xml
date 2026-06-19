@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://maxaichatbotsandbox.lovable.app/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://maxaichatbotsandbox.lovable.app/bot-settings</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://maxaichatbotsandbox.lovable.app/leads</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://maxaichatbotsandbox.lovable.app/conversations</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://maxaichatbotsandbox.lovable.app/preview</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://maxaichatbotsandbox.lovable.app/install</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://maxaichatbotsandbox.lovable.app/playground</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://maxaichatbotsandbox.lovable.app/rag-debugger</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://maxaichatbotsandbox.lovable.app/intelligence</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://maxaichatbotsandbox.lovable.app/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://maxaichatbotsandbox.lovable.app/terms</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+</urlset>
