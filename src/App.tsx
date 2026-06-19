@@ -11,9 +11,6 @@ import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 
-
-// Lazy-loaded routes — keeps Stripe.js, dashboard, super-admin, etc. out
-// of the initial bundle so the marketing page LCP isn't blocked by them.
 const BotSettingsPage = lazy(() => import("./pages/BotSettingsPage"));
 const LeadsPage = lazy(() => import("./pages/LeadsPage"));
 const ConversationsPage = lazy(() => import("./pages/ConversationsPage"));
@@ -22,16 +19,11 @@ const InstallPage = lazy(() => import("./pages/InstallPage"));
 const SuperAdmin = lazy(() => import("./pages/SuperAdmin"));
 const SuperAdminEmails = lazy(() => import("./pages/SuperAdminEmails"));
 const SuperAdminProspects = lazy(() => import("./pages/SuperAdminProspects"));
-const Pricing = lazy(() => import("./pages/Pricing"));
-const Checkout = lazy(() => import("./pages/Checkout"));
-const CheckoutReturn = lazy(() => import("./pages/CheckoutReturn"));
 const Onboarding = lazy(() => import("./pages/Onboarding"));
 const Demo = lazy(() => import("./pages/Demo"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const Terms = lazy(() => import("./pages/Terms"));
-const Refunds = lazy(() => import("./pages/Refunds"));
 const Unsubscribe = lazy(() => import("./pages/Unsubscribe"));
-const FounderOffer = lazy(() => import("./pages/FounderOffer"));
 
 const queryClient = new QueryClient();
 
@@ -67,18 +59,11 @@ const App = () => (
                 <Route path="/super-admin" element={<ProtectedRoute><SuperAdmin /></ProtectedRoute>} />
                 <Route path="/super-admin/emails" element={<ProtectedRoute><SuperAdminEmails /></ProtectedRoute>} />
                 <Route path="/super-admin/prospects" element={<ProtectedRoute><SuperAdminProspects /></ProtectedRoute>} />
-                <Route path="/pricing" element={<Pricing />} />
-                <Route path="/checkout" element={<ProtectedRoute requireAuthOnly><Checkout /></ProtectedRoute>} />
-                <Route path="/checkout/return" element={<ProtectedRoute requireAuthOnly><CheckoutReturn /></ProtectedRoute>} />
                 <Route path="/onboarding" element={<ProtectedRoute><Onboarding /></ProtectedRoute>} />
                 <Route path="/demo" element={<Demo />} />
-                <Route path="/founder" element={<FounderOffer />} />
 
                 <Route path="/privacy" element={<Privacy />} />
                 <Route path="/terms" element={<Terms />} />
-                <Route path="/refunds" element={<Refunds />} />
-                <Route path="/refund-policy" element={<Refunds />} />
-                <Route path="/cancellation-policy" element={<Refunds />} />
                 <Route path="/unsubscribe" element={<Unsubscribe />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
