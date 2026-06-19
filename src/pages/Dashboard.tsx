@@ -2,14 +2,11 @@ import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { useOrganization } from "@/hooks/useOrganization";
-import { useOrgFeatures } from "@/hooks/useOrgFeatures";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Bot, Users, MessageSquare, Lock, Code, ArrowRight } from "lucide-react";
+import { Bot, Users, MessageSquare, Code, ArrowRight } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { UsageCard } from "@/components/UsageCard";
-import { BillingCard } from "@/components/BillingCard";
 import { AnalyticsCards } from "@/components/AnalyticsCards";
 import { AnalyticsTrendChart } from "@/components/AnalyticsTrendChart";
 import { LeadFunnelCard } from "@/components/LeadFunnelCard";
@@ -17,8 +14,6 @@ import { LeadFunnelCard } from "@/components/LeadFunnelCard";
 
 export default function Dashboard() {
   const { organization, organizationId, isOwner } = useOrganization();
-  const { features } = useOrgFeatures();
-
 
   const { data: botConfig } = useQuery({
     queryKey: ["bot_config", organizationId],
@@ -172,39 +167,14 @@ export default function Dashboard() {
       {isOwner && (
         <>
           <AnalyticsCards />
-          {features.analytics_charts ? (
-            <div className="grid gap-4 lg:grid-cols-3">
-              <div className="lg:col-span-2">
-                <AnalyticsTrendChart />
-              </div>
-              <LeadFunnelCard />
+          <div className="grid gap-4 lg:grid-cols-3">
+            <div className="lg:col-span-2">
+              <AnalyticsTrendChart />
             </div>
-          ) : (
-            <Card className="border-dashed">
-              <CardHeader className="flex flex-row items-center justify-between gap-4">
-                <div>
-                  <CardTitle className="text-base flex items-center gap-2">
-                    <Lock className="h-4 w-4 text-muted-foreground" />
-                    Trend Charts & Lead Funnel
-                  </CardTitle>
-                  <CardDescription>
-                    Visualize daily conversations, lead trends, and your full funnel — included on Growth and above.
-                  </CardDescription>
-                </div>
-                <Button asChild size="sm">
-                  <Link to="/pricing">Upgrade</Link>
-                </Button>
-              </CardHeader>
-            </Card>
-          )}
+            <LeadFunnelCard />
+          </div>
         </>
       )}
-
-      {/* Usage + Billing */}
-      <div className="grid gap-4 md:grid-cols-2">
-        <UsageCard />
-        <BillingCard />
-      </div>
 
       {/* Client view: show recent leads inline */}
       {!isOwner && recentLeads && recentLeads.length > 0 && (

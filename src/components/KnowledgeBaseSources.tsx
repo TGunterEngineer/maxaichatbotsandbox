@@ -20,7 +20,6 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useOrgFeatures, useKbLimit } from "@/hooks/useOrgFeatures";
-import { UpgradePill } from "@/components/UpgradePill";
 
 
 interface KbSource {
@@ -272,13 +271,7 @@ export function KnowledgeBaseSources({ organizationId }: Props) {
               </Badge>
             </CardTitle>
             <CardDescription>
-              {atKbLimit ? (
-                <span className="text-amber-500">
-                  Source limit reached. <Link to="/pricing" className="text-primary underline">Upgrade for more →</Link>
-                </span>
-              ) : (
-                "Add websites or upload files. Websites with auto-sync refresh every Monday."
-              )}
+              Add websites or upload files. Websites with auto-sync refresh every Monday.
             </CardDescription>
           </div>
           <div className="flex gap-2">
