@@ -22,6 +22,7 @@ const SuperAdminEmails = lazy(() => import("./pages/SuperAdminEmails"));
 const SuperAdminProspects = lazy(() => import("./pages/SuperAdminProspects"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const Terms = lazy(() => import("./pages/Terms"));
+const GuideHowToBuildAiChatbot = lazy(() => import("./pages/GuideHowToBuildAiChatbot"));
 
 const queryClient = new QueryClient();
 
@@ -67,6 +68,7 @@ const App = () => (
 
                 <Route path="/privacy" element={<Privacy />} />
                 <Route path="/terms" element={<Terms />} />
+                <Route path="/guides/how-to-build-ai-chatbot" element={<GuideHowToBuildAiChatbot />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>

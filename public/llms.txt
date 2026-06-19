@@ -13,6 +13,7 @@
 - [AI Playground](/playground): Streaming prompt-testing lab with model and temperature controls.
 - [RAG Debugger](/rag-debugger): Visualizes which knowledge-base chunks get retrieved for a query.
 - [Intelligence](/intelligence): Sentiment analysis, intent classification, and lead scoring.
+- [Guide: How to make an AI chatbot for a website](/guides/how-to-build-ai-chatbot): Step-by-step tutorial on building and installing an AI chatbot for lead generation.
 
 ## Optional
 
