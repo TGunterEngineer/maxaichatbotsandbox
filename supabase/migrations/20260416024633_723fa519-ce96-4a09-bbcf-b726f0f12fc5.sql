@@ -1,0 +1,1 @@
+ALTER TABLE public.leads ADD COLUMN lead_notes text DEFAULT NULL;

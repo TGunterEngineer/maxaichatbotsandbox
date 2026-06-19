@@ -1,0 +1,1 @@
+ALTER TABLE public.bot_configs ADD COLUMN webhook_url text DEFAULT NULL;

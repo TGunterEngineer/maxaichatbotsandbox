@@ -1,0 +1,1 @@
+ALTER VIEW public.org_widget_info SET (security_invoker = on);

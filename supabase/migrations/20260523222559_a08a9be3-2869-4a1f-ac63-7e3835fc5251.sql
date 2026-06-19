@@ -1,0 +1,1 @@
+ALTER TABLE public.bot_configs ADD COLUMN IF NOT EXISTS support_email text;

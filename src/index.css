@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* MAXAI palette — dark by default. Mirrors the /pricing page look:
+       bg #0a0a0f, emerald-400 → cyan-400 accents, white/5–10 surfaces. */
+    --background: 240 20% 5%;          /* #0a0a0f */
+    --foreground: 0 0% 98%;
+
+    --card: 240 18% 7%;                /* slightly lifted from bg */
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 18% 7%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Primary = emerald-400 */
+    --primary: 158 64% 52%;
+    --primary-foreground: 240 20% 5%;
+
+    /* Secondary = subtle white tint surface */
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 10% 12%;
+    --muted-foreground: 0 0% 65%;
+
+    /* Accent = cyan-400 */
+    --accent: 188 86% 53%;
+    --accent-foreground: 240 20% 5%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 100%;               /* used with /10 opacity in components */
+    --input: 0 0% 100%;
+    --ring: 158 64% 52%;
+
+    --radius: 0.75rem;
+
+    /* Brand gradients & shadows */
+    --gradient-brand: linear-gradient(135deg, hsl(158 64% 52%), hsl(188 86% 53%));
+    --gradient-brand-soft: linear-gradient(135deg, hsl(158 64% 52% / 0.1), hsl(188 86% 53% / 0.1));
+    --shadow-brand: 0 10px 40px -10px hsl(158 64% 52% / 0.35);
+
+    --sidebar-background: 240 20% 5%;
+    --sidebar-foreground: 0 0% 88%;
+    --sidebar-primary: 158 64% 52%;
+    --sidebar-primary-foreground: 240 20% 5%;
+    --sidebar-accent: 240 10% 12%;
+    --sidebar-accent-foreground: 158 64% 52%;
+    --sidebar-border: 0 0% 100%;
+    --sidebar-ring: 158 64% 52%;
+  }
+
+  /* Keep .dark identical so any explicit dark-mode toggling stays consistent */
+  .dark {
+    --background: 240 20% 5%;
+    --foreground: 0 0% 98%;
+    --card: 240 18% 7%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 18% 7%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 158 64% 52%;
+    --primary-foreground: 240 20% 5%;
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 10% 12%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 188 86% 53%;
+    --accent-foreground: 240 20% 5%;
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 100%;
+    --input: 0 0% 100%;
+    --ring: 158 64% 52%;
+    --sidebar-background: 240 20% 5%;
+    --sidebar-foreground: 0 0% 88%;
+    --sidebar-primary: 158 64% 52%;
+    --sidebar-primary-foreground: 240 20% 5%;
+    --sidebar-accent: 240 10% 12%;
+    --sidebar-accent-foreground: 158 64% 52%;
+    --sidebar-border: 0 0% 100%;
+    --sidebar-ring: 158 64% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border/10;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  /* Utility classes for the brand gradient look used across the app */
+  .bg-brand-gradient {
+    background-image: var(--gradient-brand);
+  }
+  .text-brand-gradient {
+    background-image: var(--gradient-brand);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}

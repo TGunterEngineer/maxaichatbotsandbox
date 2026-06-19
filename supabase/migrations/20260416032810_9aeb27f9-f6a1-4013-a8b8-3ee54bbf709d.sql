@@ -1,0 +1,1 @@
+ALTER TABLE public.bot_configs ALTER COLUMN bot_name SET DEFAULT 'MaximumAI Chatbot';
