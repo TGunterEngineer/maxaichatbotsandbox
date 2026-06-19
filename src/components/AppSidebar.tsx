@@ -1,4 +1,4 @@
-import { LayoutDashboard, Settings, Users, LogOut, Bot, Shield, MessageSquare, Eye, Code, LifeBuoy } from "lucide-react";
+import { LayoutDashboard, Settings, Users, LogOut, Bot, Shield, MessageSquare, Eye, Code, LifeBuoy, Sparkles, Database, Brain } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { useLocation } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
@@ -26,6 +26,9 @@ const allNavItems = [
   { title: "Bot Settings", url: "/bot-settings", icon: Settings, roles: ["owner"] },
   { title: "Leads", url: "/leads", icon: Users, roles: ["owner", "member"] },
   { title: "Conversations", url: "/conversations", icon: MessageSquare, roles: ["owner", "member"] },
+  { title: "Intelligence", url: "/intelligence", icon: Brain, roles: ["owner", "member"] },
+  { title: "AI Playground", url: "/playground", icon: Sparkles, roles: ["owner", "member"] },
+  { title: "RAG Debugger", url: "/rag-debugger", icon: Database, roles: ["owner"] },
   { title: "Widget Preview", url: "/preview", icon: Eye, roles: ["owner"] },
   { title: "Install", url: "/install", icon: Code, roles: ["owner"] },
 ];

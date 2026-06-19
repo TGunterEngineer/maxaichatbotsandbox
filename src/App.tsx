@@ -14,6 +14,9 @@ const LeadsPage = lazy(() => import("./pages/LeadsPage"));
 const ConversationsPage = lazy(() => import("./pages/ConversationsPage"));
 const PreviewPage = lazy(() => import("./pages/PreviewPage"));
 const InstallPage = lazy(() => import("./pages/InstallPage"));
+const Playground = lazy(() => import("./pages/Playground"));
+const RagDebugger = lazy(() => import("./pages/RagDebugger"));
+const Intelligence = lazy(() => import("./pages/Intelligence"));
 const SuperAdmin = lazy(() => import("./pages/SuperAdmin"));
 const SuperAdminEmails = lazy(() => import("./pages/SuperAdminEmails"));
 const SuperAdminProspects = lazy(() => import("./pages/SuperAdminProspects"));
@@ -50,6 +53,9 @@ const App = () => (
                 <Route path="/conversations" element={<ConversationsPage />} />
                 <Route path="/preview" element={<PreviewPage />} />
                 <Route path="/install" element={<InstallPage />} />
+                <Route path="/playground" element={<Playground />} />
+                <Route path="/rag-debugger" element={<RagDebugger />} />
+                <Route path="/intelligence" element={<Intelligence />} />
                 <Route path="/super-admin" element={<SuperAdmin />} />
                 <Route path="/super-admin/emails" element={<SuperAdminEmails />} />
                 <Route path="/super-admin/prospects" element={<SuperAdminProspects />} />
