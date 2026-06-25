@@ -55,6 +55,12 @@ serve(async (req) => {
       });
     }
 
+    if (typeof password !== "string" || password.length < 8) {
+      return new Response(JSON.stringify({ error: "Password must be at least 8 characters" }), {
+        status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
     // 1. Create the organization
     const { data: org, error: orgErr } = await supabase
       .from("organizations")
