@@ -71,10 +71,10 @@ export default function RagDebugger() {
     >
       <div className="space-y-6">
         <div>
-          <h1 className="text-2xl font-bold flex items-center gap-2">
+          <h2 className="text-2xl font-bold flex items-center gap-2">
             <Database className="h-6 w-6 text-primary" />
             RAG Debugger
-          </h1>
+          </h2>
           <p className="text-sm text-muted-foreground mt-1">
             Inspect which knowledge-base chunks get retrieved for any query, with live similarity scores.
           </p>

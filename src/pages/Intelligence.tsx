@@ -116,10 +116,10 @@ export default function Intelligence() {
     >
       <div className="space-y-6">
         <div>
-          <h1 className="text-2xl font-bold flex items-center gap-2">
+          <h2 className="text-2xl font-bold flex items-center gap-2">
             <Brain className="h-6 w-6 text-primary" />
             Conversation Intelligence
-          </h1>
+          </h2>
           <p className="text-sm text-muted-foreground mt-1">
             AI-powered analysis across {analysis.totalSessions} chat sessions — intent, sentiment, and lead heat.
           </p>
