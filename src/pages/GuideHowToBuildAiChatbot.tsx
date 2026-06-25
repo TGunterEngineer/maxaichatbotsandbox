@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { ArrowLeft } from "lucide-react";
 
 export default function GuideHowToBuildAiChatbot() {
@@ -7,37 +8,7 @@ export default function GuideHowToBuildAiChatbot() {
   const description =
     "Step-by-step guide to building an AI chatbot for your website: training on your content, capturing leads, and installing the widget in under 10 minutes.";
 
-  // Inject per-route SEO tags without adding react-helmet-async dependency
-  if (typeof document !== "undefined") {
-    document.title = title;
-    const setMeta = (sel: string, attr: string, val: string, create?: () => HTMLElement) => {
-      let el = document.head.querySelector(sel) as HTMLElement | null;
-      if (!el && create) {
-        el = create();
-        document.head.appendChild(el);
-      }
-      if (el) el.setAttribute(attr, val);
-    };
-    setMeta('meta[name="description"]', "content", description);
-    setMeta('link[rel="canonical"]', "href", canonical);
-    setMeta('meta[property="og:title"]', "content", title, () => {
-      const m = document.createElement("meta");
-      m.setAttribute("property", "og:title");
-      return m;
-    });
-    setMeta('meta[property="og:description"]', "content", description, () => {
-      const m = document.createElement("meta");
-      m.setAttribute("property", "og:description");
-      return m;
-    });
-    setMeta('meta[property="og:url"]', "content", canonical, () => {
-      const m = document.createElement("meta");
-      m.setAttribute("property", "og:url");
-      return m;
-    });
-  }
-
-  const articleJsonLd = {
+  const howToJsonLd = {
     "@context": "https://schema.org",
     "@type": "HowTo",
     name: title,
@@ -52,6 +23,46 @@ export default function GuideHowToBuildAiChatbot() {
       { "@type": "HowToStep", name: "Measure and iterate", text: "Watch conversations, sentiment, and lead conversion. Update the knowledge base as your business changes." },
     ],
   };
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How much does an AI chatbot cost to run?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Inference is the main cost. At current LLM pricing, a small-business bot handling 500 conversations per month typically costs $5–$30 in API calls. Most platforms wrap this in a flat monthly fee.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Do I need to code to build one?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "No. Platforms like MaximumAI handle scraping, embedding, vector storage, and the embed widget for you. If you can paste a URL and copy a script tag, you can ship a chatbot.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What's the difference between a rule-based bot and an AI chatbot?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Rule-based bots follow scripted decision trees (\"press 1 for sales\"). AI chatbots understand free-form language and answer from your actual content. The latter handles the 80% of questions that don't fit your script.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Will it hallucinate?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Less than you'd think, when grounded in a focused knowledge base with a strict system prompt. Two safeguards: (1) tell the bot to say \"I don't know — let me connect you to a human\" when retrieval confidence is low, and (2) review transcripts weekly.",
+        },
+      },
+    ],
+  };
+
 
   return (
     <div className="min-h-screen bg-background text-foreground">
