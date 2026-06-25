@@ -66,10 +66,24 @@ export default function GuideHowToBuildAiChatbot() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <Helmet>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <link rel="canonical" href={canonical} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonical} />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <script type="application/ld+json">{JSON.stringify(howToJsonLd)}</script>
+        <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>
+      </Helmet>
       <main className="mx-auto max-w-3xl px-6 py-12">
         <Link to="/" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
           <ArrowLeft className="h-4 w-4" /> Back to dashboard
         </Link>
+
 
         <article className="prose prose-invert mt-6 max-w-none">
           <h1>How to Make an AI Chatbot for a Website (2026 Guide)</h1>
@@ -226,12 +240,8 @@ export default function GuideHowToBuildAiChatbot() {
             step of this guide running on live (simulated) data.
           </p>
         </article>
-
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
-        />
       </main>
     </div>
   );
 }
+
