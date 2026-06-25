@@ -64,7 +64,11 @@ export default function RagDebugger() {
   const maxScore = results[0]?.score ?? 1;
 
   return (
-    <DashboardLayout>
+    <DashboardLayout
+      title="RAG Knowledge-Base Debugger"
+      description="Inspect retrieval-augmented generation in action: see which knowledge-base chunks your AI chatbot pulls for each visitor query and why."
+      path="/rag-debugger"
+    >
       <div className="space-y-6">
         <div>
           <h1 className="text-2xl font-bold flex items-center gap-2">
