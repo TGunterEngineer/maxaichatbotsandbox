@@ -135,9 +135,12 @@ serve(async (req) => {
     );
   } catch (e: any) {
     console.error("change-subscription error:", e);
-    return new Response(JSON.stringify({ error: e.message ?? "Unknown error" }), {
-      status: 500,
-      headers: { ...corsHeaders, "Content-Type": "application/json" },
-    });
+    return new Response(
+      JSON.stringify({ error: "Unable to change subscription. Please try again." }),
+      {
+        status: 500,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      }
+    );
   }
 });
