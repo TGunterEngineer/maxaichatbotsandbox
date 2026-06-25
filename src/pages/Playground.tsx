@@ -121,13 +121,17 @@ export default function Playground() {
   useEffect(() => () => { abortRef.current = true; }, []);
 
   return (
-    <DashboardLayout>
+    <DashboardLayout
+      title="Prompt Playground for AI Chatbots"
+      description="Test system prompts, compare models, and tune temperature against simulated visitor questions in a side-by-side AI chatbot playground."
+      path="/playground"
+    >
       <div className="space-y-6">
         <div>
-          <h1 className="text-2xl font-bold flex items-center gap-2">
+          <h2 className="text-2xl font-bold flex items-center gap-2">
             <Sparkles className="h-6 w-6 text-primary" />
             AI Playground
-          </h1>
+          </h2>
           <p className="text-sm text-muted-foreground mt-1">
             Test prompts, compare models, and tune parameters in real time.
           </p>

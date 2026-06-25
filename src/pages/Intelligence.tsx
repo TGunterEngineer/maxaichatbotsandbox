@@ -109,13 +109,17 @@ export default function Intelligence() {
   const COLORS = ["hsl(var(--primary))", "hsl(var(--primary)/.8)", "hsl(var(--primary)/.6)", "hsl(var(--primary)/.5)", "hsl(var(--primary)/.4)", "hsl(var(--primary)/.3)", "hsl(var(--muted-foreground))"];
 
   return (
-    <DashboardLayout>
+    <DashboardLayout
+      title="Conversation Intelligence & Sentiment"
+      description="Detect intents, sentiment, and hot leads across your AI chatbot conversations with automatic clustering and trending insights."
+      path="/intelligence"
+    >
       <div className="space-y-6">
         <div>
-          <h1 className="text-2xl font-bold flex items-center gap-2">
+          <h2 className="text-2xl font-bold flex items-center gap-2">
             <Brain className="h-6 w-6 text-primary" />
             Conversation Intelligence
-          </h1>
+          </h2>
           <p className="text-sm text-muted-foreground mt-1">
             AI-powered analysis across {analysis.totalSessions} chat sessions — intent, sentiment, and lead heat.
           </p>

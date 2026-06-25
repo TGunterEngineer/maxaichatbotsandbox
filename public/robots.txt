@@ -1,8 +1,16 @@
 User-agent: Googlebot
 Allow: /
+Disallow: /super-admin
+Disallow: /super-admin/
+Disallow: /auth
+Disallow: /onboarding
 
 User-agent: Bingbot
 Allow: /
+Disallow: /super-admin
+Disallow: /super-admin/
+Disallow: /auth
+Disallow: /onboarding
 
 User-agent: Twitterbot
 Allow: /
@@ -12,3 +20,9 @@ Allow: /
 
 User-agent: *
 Allow: /
+Disallow: /super-admin
+Disallow: /super-admin/
+Disallow: /auth
+Disallow: /onboarding
+
+Sitemap: https://maxaichatbotsandbox.lovable.app/sitemap.xml
